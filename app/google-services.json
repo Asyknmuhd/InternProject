@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31919204979",
+    "project_id": "intern-project-f2fa3",
+    "storage_bucket": "intern-project-f2fa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31919204979:android:5249d1e1dd5f98664b9806",
+        "android_client_info": {
+          "package_name": "com.example.mptsewa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31919204979-iqetm9ti6srm9d53fk7g1okf7f3p4h36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlECx3KrnO5nrdZyHTKQMeptaVJF6-Wpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31919204979-iqetm9ti6srm9d53fk7g1okf7f3p4h36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
