@@ -2,16 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/logoutMenu"
-        android:orderInCategory="100"
-        app:showAsAction="always"
-        android:title="Logout">
+        android:id="@+id/SettingMenu"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="Setting">
     </item>
-
     <item
-        android:id="@+id/profileMenu"
+        android:id="@+id/ProfileMenu"
         android:orderInCategory="100"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:title="Profile">
     </item>
 

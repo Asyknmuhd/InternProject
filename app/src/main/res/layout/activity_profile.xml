@@ -8,10 +8,10 @@
 
     <TextView
         android:id="@+id/tvProfilePhone"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Phone"
-        android:textSize="24sp"
+        android:text="Telefon:"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -28,14 +28,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.135"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/potrait" />
 
     <TextView
         android:id="@+id/tvProfileName"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="24sp"
+        android:text="Nama:"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,10 +45,10 @@
 
     <TextView
         android:id="@+id/tvProfileEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="email"
-        android:textSize="24sp"
+        android:text="Emel:"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

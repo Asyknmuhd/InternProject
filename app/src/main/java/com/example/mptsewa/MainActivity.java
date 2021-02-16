@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         userRegistration = (TextView) findViewById(R.id.tvRegister);
         ForgotPassword = (TextView) findViewById(R.id.tvForgotPass);
 
-        Info.setText("No of attempts remaining: 5");
+        Info.setText("Bilangan Percubaan: 5");
 
         firebaseAuth = FirebaseAuth.getInstance();
         progressDialog = new ProgressDialog(this);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void validate (String userName, String userPassword){
 
-        progressDialog.setMessage("You can subscribe!");
+        progressDialog.setMessage("Anda Akan Log Masuk Selepas /nPengesahan Emel");
         progressDialog.show();
 
       firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
               }else{
                   Toast.makeText(MainActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
                   counter--;
-                  Info.setText("No of attempts remaining: " + counter) ;
+                  Info.setText("Bilangan Percubaan: " + counter) ;
                   progressDialog.dismiss();
                   if(counter == 0){
                       Login.setEnabled(false);

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MPTSewa">
-        <activity android:name=".UpdatePassword"></activity>
+        <activity android:name=".HallBooking"></activity>
+        <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ForgotPassword" />

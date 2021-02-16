@@ -24,14 +24,14 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        logout = (Button) findViewById(R.id.btn_Logout);
-
+        //if letak button logout.
+       /*logout = (Button) findViewById(R.id.btn_Logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Logout();
             }
-        });
+        });*/
     }
 
     private void Logout(){
@@ -50,11 +50,11 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.logoutMenu:{
+            case R.id.SettingMenu:{
                 Logout();
                 break;
             }
-            case R.id.profileMenu:
+            case R.id.ProfileMenu:
                 startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
                 break;
         }

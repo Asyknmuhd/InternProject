@@ -34,17 +34,17 @@ public class ForgotPassword extends AppCompatActivity {
             public void onClick(View v) {
                 String useremail = passwordEmail.getText().toString().trim();
                 if(useremail.equals("")){
-                    Toast.makeText(ForgotPassword.this,"Please enter ur registered email ID.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPassword.this,"Sila Isikan Emel yang Didaftarkan", Toast.LENGTH_SHORT).show();
                 }else{
                     firebaseAuth.sendPasswordResetEmail(useremail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(ForgotPassword.this,"Password reset email sent",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgotPassword.this,"Penetapan Kata Laluan Ke E-mel Telah Dihantar",Toast.LENGTH_SHORT).show();
                                 finish();
                                 startActivity(new Intent(ForgotPassword.this, MainActivity.class));
                             }else{
-                                Toast.makeText(ForgotPassword.this,"Error in sending password reset email",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ForgotPassword.this,"Ralat Menghantar Penetapan Kata Laluan Ke E-mel",Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
