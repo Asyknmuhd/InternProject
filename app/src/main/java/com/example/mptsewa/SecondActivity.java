@@ -16,7 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class SecondActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private Button logout ;
+    private Button btn_continue;
+  //  private Button logout ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,16 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        btn_continue = (Button)findViewById(R.id.btn_continue);
+
+
+        btn_continue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SecondActivity.this,HallBooking.class));
+            }
+        });
+
         //if letak button logout.
        /*logout = (Button) findViewById(R.id.btn_Logout);
         logout.setOnClickListener(new View.OnClickListener() {

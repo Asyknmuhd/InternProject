@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MPTSewa">
-        <activity android:name=".HallBooking"></activity>
+        <activity android:name=".HallBooking" />
         <activity android:name=".UpdatePassword" />
         <activity android:name=".UpdateProfile" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
