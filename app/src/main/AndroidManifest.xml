@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MPTSewa">
-        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".LocationActivity"></activity>
+        <activity android:name=".AboutUsActivity" />
         <activity android:name=".TermsOfUseActivity" />
-        <activity android:name=".PolicyActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".HallBooking" />

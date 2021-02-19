@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private Button aboutus,profile1,changepass,contact,policy,terms,logout;
+    private Button aboutus,profile1,changepass,contact,location,terms,logout;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -54,11 +54,11 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        policy = (Button) findViewById(R.id.buttonpolisi);
-        policy.setOnClickListener(new View.OnClickListener() {
+        location = (Button) findViewById(R.id.buttonlocation);
+        location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                policy();
+                location();
             }
         });
 
@@ -95,8 +95,8 @@ public class SettingActivity extends AppCompatActivity {
         startActivity(new Intent(SettingActivity.this, ContactActivity.class));
     }
 
-    private void policy(){
-        startActivity(new Intent(SettingActivity.this, PolicyActivity.class));
+    private void location(){
+        startActivity(new Intent(SettingActivity.this,LocationActivity.class));
     }
 
     private void TermsOfUse(){

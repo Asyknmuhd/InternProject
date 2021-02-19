@@ -103,12 +103,12 @@
         app:layout_constraintVertical_bias="0.698" />
 
     <Button
-        android:id="@+id/buttonpolisi"
+        android:id="@+id/buttonlocation"
         android:layout_width="422dp"
         android:layout_height="80dp"
         android:background="#FFFFFF"
         android:backgroundTint="#4A86B6"
-        android:text="Polisi Data"
+        android:text="Lokasi"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
