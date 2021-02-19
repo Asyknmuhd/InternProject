@@ -1,8 +1,10 @@
 package com.example.mptsewa;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -57,7 +59,7 @@ public class HallBooking extends AppCompatActivity {
                         image.setImageResource(R.drawable.dewantamansaga2);
                         break;
                     case 9:
-                        image.setImageResource(R.drawable.dewantj);
+                        image.setImageResource(R.drawable.dewantj2);
                         break;
                     case 10:
                         image.setImageResource(R.drawable.dewantunrazak);
@@ -71,5 +73,13 @@ public class HallBooking extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

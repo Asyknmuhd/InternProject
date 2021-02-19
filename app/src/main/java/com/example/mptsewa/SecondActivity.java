@@ -62,13 +62,17 @@ public class SecondActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
             case R.id.SettingMenu:{
-                Logout();
+                startActivity(new Intent(SecondActivity.this, SettingActivity.class));
                 break;
             }
-            case R.id.ProfileMenu:
+            case R.id.ProfileMenu: {
                 startActivity(new Intent(SecondActivity.this, ProfileActivity.class));
                 break;
+            }
+            case android.R.id.home:
+                onBackPressed();
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
