@@ -11,13 +11,14 @@
         android:id="@+id/spinner"
         android:layout_width="340dp"
         android:layout_height="37dp"
+        android:textSize="18sp"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.448" />
 
     <ImageView
         android:id="@+id/image"
@@ -34,41 +35,56 @@
 
 
     <Switch
-        android:id="@+id/switchmajlis"
-        android:layout_width="371dp"
-        android:layout_height="47dp"
-        android:text="Majlis/Lain-Lain"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865"></Switch>
-
-    <Switch
         android:id="@+id/switchbadminton"
-        android:layout_width="371dp"
+        android:layout_width="330dp"
         android:layout_height="47dp"
         android:text="Badminton"
-        android:textSize="24sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766"></Switch>
+        app:layout_constraintVertical_bias="0.676"></Switch>
 
     <Switch
-        android:id="@+id/switchkenduri3"
-        android:layout_width="371dp"
+        android:id="@+id/switchmajlis"
+        android:layout_width="330dp"
         android:layout_height="47dp"
-        android:text="Kenduri "
-        android:textSize="24sp"
+        android:text="Majlis/Lain-Lain"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657"></Switch>
+        app:layout_constraintVertical_bias="0.774"></Switch>
+
+    <Switch
+        android:id="@+id/switchkenduri"
+        android:layout_width="330dp"
+        android:layout_height="47dp"
+        android:text="Kenduri "
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567"></Switch>
+
+    <TextView
+        android:id="@+id/tvSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

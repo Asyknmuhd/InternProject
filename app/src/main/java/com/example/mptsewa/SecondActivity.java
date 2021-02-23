@@ -27,7 +27,6 @@ public class SecondActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         btn_continue = (Button)findViewById(R.id.btn_continue);
 
-
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
