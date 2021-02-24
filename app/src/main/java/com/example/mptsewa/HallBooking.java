@@ -3,12 +3,19 @@ package com.example.mptsewa;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -16,6 +23,12 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class HallBooking extends AppCompatActivity {
+    private TextView CID, COD, title;
+    CalendarView calendarViewCID, calendarViewCOD;
+    private Dialog popupCID, popupCOD;
+    private Dialog popup;
+
+
     private Spinner spinner ;
     private ImageView image;
     private Switch kenduri, badminton, majlis;
@@ -31,6 +44,12 @@ public class HallBooking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hall_booking);
+
+        popupCID = new Dialog(this);
+        popupCOD = new Dialog(this);
+        CID = findViewById(R.id.tvCID);
+        COD = findViewById(R.id.tvCOD);
+        popup = new Dialog(this);
 
         spinner = findViewById(R.id.spinner);
         image = findViewById(R.id.image);
@@ -80,9 +99,7 @@ public class HallBooking extends AppCompatActivity {
                         image.setImageResource(R.drawable.dewantunrazak);
                         break;
                 }
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 //handle any errors
@@ -92,55 +109,90 @@ public class HallBooking extends AppCompatActivity {
         kenduri = findViewById(R.id.switchkenduri);
         badminton = findViewById(R.id.switchbadminton);
         majlis = findViewById(R.id.switchmajlis);
-        totalsum = findViewById(R.id.tvSum);
 
-      //  kenduri.setChecked(new V);
         kenduri.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Info.setText("Bilangan Percubaan: " + counter) ;(contoh)
-                //sumbadminton = 20;
-               // totalsum.setText("Jumlah:" + sumbadminton);
-                if(isChecked == true){
-                    totalsum.setText("Jumlah:" + sumkenduri);
-                }else if (isChecked == false){
-                    totalsum.setText("Jumlah:");
-                }
-                else if(kenduri.isChecked()==true && badminton.isChecked()==true){
-                    sum = sumkenduri + sumbadminton ;
-                    totalsum.setText("Jumlah"+sum);
-                }
+
             }
         });
         badminton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Info.setText("Bilangan Percubaan: " + counter) ;(contoh)
-                //sumbadminton = 20;
-                // totalsum.setText("Jumlah:" + sumbadminton);
-                if(isChecked == true){
-                    totalsum.setText("Jumlah:" + sumbadminton);
-                }else if (isChecked == false){
-                    totalsum.setText("Jumlah:");
-                }
+
             }
         });
         majlis.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // Info.setText("Bilangan Percubaan: " + counter) ;(contoh)
-                //sumbadminton = 20;
-                // totalsum.setText("Jumlah:" + sumbadminton);
-                if(isChecked == true){
-                    totalsum.setText("Jumlah:" + summajlis);
-                }else if (isChecked == false){
-                    totalsum.setText("Jumlah:");
-                }
+
             }
         });
 
-
     }
+    public void showPopupCID(View v){
+        Button saveCID;
+
+        popupCID.setContentView(R.layout.popup_fromdate);
+        saveCID = popupCID.findViewById(R.id.saveCID);
+        title = popupCID.findViewById(R.id.tvTitle1);
+        calendarViewCID = popupCID.findViewById(R.id.calendarViewCID);
+
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.popup_fromdate,(ViewGroup)findViewById(R.id.layoutCID));
+
+        calendarViewCID.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String dateCID = dayOfMonth + "/" + (month+1) + "/" + year;
+                title.setText(dateCID);
+                CID.setText(dateCID);
+            }
+        });
+
+        saveCID.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupCID.dismiss();
+            }
+        });
+        popupCID.show();
+    }
+    public void showPopupCOD(View v){
+        Button saveCOD;
+
+        popupCOD.setContentView(R.layout.popup_todate);
+        saveCOD = popupCOD.findViewById(R.id.saveCOD);
+        title = popupCOD.findViewById(R.id.tvTitle2);
+        calendarViewCOD = popupCOD.findViewById(R.id.calendarViewCOD);
+
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.popup_todate, (ViewGroup)findViewById(R.id.layoutCOD));
+
+        calendarViewCOD.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String dateCOD = dayOfMonth + "/" + (month + 1) + "/" + year;
+                title.setText(dateCOD);
+                COD.setText(dateCOD);
+            }
+        });
+
+        saveCOD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupCOD.dismiss();
+            }
+        });
+        popupCOD.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -153,8 +205,10 @@ public class HallBooking extends AppCompatActivity {
                 startActivity(new Intent(HallBooking.this, ProfileActivity.class));
                 break;
             }
-            case android.R.id.home:
+            case android.R.id.home: {
                 onBackPressed();
+                break;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
