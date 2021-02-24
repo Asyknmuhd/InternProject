@@ -17,98 +17,105 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/buttonabtus"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#741282B5"
+        android:backgroundTint="#221282B5"
         android:text="tentang kami"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonlogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.821" />
+        app:layout_constraintVertical_bias="0.836" />
 
     <Button
         android:id="@+id/buttonhubungi"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#221282B5"
+        android:backgroundTint="#221282B5"
         android:text="Hubungi"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonlocation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <Button
         android:id="@+id/buttontukarpass"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FDFDFD"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#221282B5"
+        android:backgroundTint="#221282B5"
         android:text="Tukar Kata Laluan"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonhubungi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.259" />
 
     <Button
         android:id="@+id/buttonprofil"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FDFDFD"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#221282B5"
+        android:backgroundTint="#221282B5"
         android:text="Profil"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttontukarpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202" />
+        app:layout_constraintVertical_bias="0.112" />
 
     <Button
         android:id="@+id/buttonsyarat"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#221282B5"
+        android:backgroundTint="#221282B5"
         android:text="Syarat Penggunaan"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonabtus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.698" />
+        app:layout_constraintVertical_bias="0.694" />
 
     <Button
         android:id="@+id/buttonlocation"
-        android:layout_width="410dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:backgroundTint="#741282B5"
+        android:layout_width="350dp"
+        android:layout_height="77dp"
+        android:background="#221282B5"
+        android:backgroundTint="#221282B5"
         android:text="Lokasi"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonsyarat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576" />
+        app:layout_constraintVertical_bias="0.549" />
 
     <Button
         android:id="@+id/buttonlogout"
-        android:layout_width="410dp"
+        android:layout_width="390dp"
         android:layout_height="80dp"
         android:background="#FDFDFD"
         android:backgroundTint="#D7FFC107"
@@ -117,9 +124,9 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.995" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
