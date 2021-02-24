@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#741282B5"
+    android:backgroundTint="#741282B5"
     tools:context=".RegistrationActivity">
 
     <EditText
         android:id="@+id/etUserName2"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Username"
@@ -22,7 +24,7 @@
 
     <EditText
         android:id="@+id/etPhone"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Phone"
@@ -36,7 +38,7 @@
 
     <EditText
         android:id="@+id/etUserPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
@@ -50,7 +52,7 @@
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email"
@@ -64,8 +66,9 @@
 
     <Button
         android:id="@+id/btnregister"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D7FFC107"
         android:text="REGISTER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,5 +100,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.058"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/potrait" />
 </androidx.constraintlayout.widget.ConstraintLayout>

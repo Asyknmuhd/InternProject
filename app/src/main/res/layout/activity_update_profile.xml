@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#741282B5"
     tools:context=".UpdateProfile">
 
     <ImageView
@@ -19,7 +20,7 @@
 
     <EditText
         android:id="@+id/etNameUpdate"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Name"
@@ -31,7 +32,7 @@
 
     <EditText
         android:id="@+id/etEmailUpdate"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Email"
@@ -45,7 +46,7 @@
 
     <EditText
         android:id="@+id/etPhoneUpdate"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Phone"
@@ -59,9 +60,10 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:backgroundTint="#D7FFC107"
+        android:text="Simpan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

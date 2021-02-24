@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#741282B5"
     tools:context=".ProfileActivity">
 
     <TextView
@@ -58,9 +59,11 @@
 
     <Button
         android:id="@+id/btnProfileUpdate"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D7FFC107"
         android:text="Edit"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
@@ -70,9 +73,11 @@
 
     <Button
         android:id="@+id/btnChangePass"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D7FFC107"
         android:text="Change Password"
+        android:textColor="#0B0B0B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
