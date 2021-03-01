@@ -20,6 +20,7 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         firebaseAuth = FirebaseAuth.getInstance();
         aboutus = (Button)findViewById(R.id.buttonabtus);
@@ -85,7 +86,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     private void profile(){
-        startActivity(new Intent(SettingActivity.this, UpdateProfile.class));
+        startActivity(new Intent(SettingActivity.this, ProfileActivity.class));
     }
     private void updatePass(){
         startActivity(new Intent(SettingActivity.this, UpdatePassword.class));

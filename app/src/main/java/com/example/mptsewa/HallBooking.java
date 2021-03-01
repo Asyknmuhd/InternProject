@@ -53,6 +53,7 @@ public class HallBooking extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
         image = findViewById(R.id.image);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //array
         String [] tempat = {"Pilih Lokasi Dewan","Dewan Bukit Bendera","Dewan Kuala Krau","Dewan Lanchang","Dewan Sri Bahagia",
