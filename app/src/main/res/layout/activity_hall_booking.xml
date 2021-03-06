@@ -35,43 +35,43 @@
 
 
     <Switch
-        android:id="@+id/switchbadminton"
-        android:layout_width="350dp"
-        android:layout_height="47dp"
-        android:text="Badminton (RM40.00)"
+        android:id="@+id/switchkenduri"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Kenduri (RM500 Sejam)"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.812"></Switch>
+        app:layout_constraintVertical_bias="0.746"></Switch>
 
     <Switch
-        android:id="@+id/switchkenduri"
-        android:layout_width="350dp"
-        android:layout_height="47dp"
-        android:text="Kenduri (RM 2000.00)"
+        android:id="@+id/switchbadminton"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Badminton (RM8 Sejam)"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"></Switch>
+        app:layout_constraintVertical_bias="0.844"></Switch>
 
     <Switch
         android:id="@+id/switchmajlis"
-        android:layout_width="350dp"
-        android:layout_height="47dp"
-        android:text="Majlis/Lain-Lain (RM 1800.00)"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Lain-Lain (RM400 Sejam)"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91"></Switch>
+        app:layout_constraintVertical_bias="0.947"></Switch>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
@@ -135,6 +135,61 @@
             android:src="@drawable/cal" />
     </androidx.cardview.widget.CardView>
 
-   
+    <EditText
+        android:id="@+id/et_jamkenduri"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
+
+    <EditText
+        android:id="@+id/et_jambadminton"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853" />
+
+    <EditText
+        android:id="@+id/et_jammajlis"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnConfirm"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:background="#FFFFFF"
+        app:backgroundTint="#D7FFC107"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

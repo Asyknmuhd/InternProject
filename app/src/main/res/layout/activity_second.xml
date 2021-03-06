@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:background="#D7FFC107"
         android:text="TEMPAH DEWAN"
+        android:textColor="#000000"
         app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

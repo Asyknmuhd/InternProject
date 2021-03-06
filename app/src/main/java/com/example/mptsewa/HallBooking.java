@@ -21,24 +21,28 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class HallBooking extends AppCompatActivity {
     private TextView CID, COD, title;
     CalendarView calendarViewCID, calendarViewCOD;
     private Dialog popupCID, popupCOD;
     private Dialog popup;
-
-
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
     private Spinner spinner ;
     private ImageView image;
     private Switch kenduri, badminton, majlis;
-    private TextView totalsum;
-    private int tiada = 0;
-    private int sumkenduri = 2000;
-    private int sumbadminton = 20;
-    private int summajlis = 1800;
-    private int sum;
-
+    private TextView jamkenduri, jambadminton, jammajlis ;
+    private FloatingActionButton confirm;
+    ClassBooking classBooking;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +54,62 @@ public class HallBooking extends AppCompatActivity {
         CID = findViewById(R.id.tvCID);
         COD = findViewById(R.id.tvCOD);
         popup = new Dialog(this);
-
         spinner = findViewById(R.id.spinner);
         image = findViewById(R.id.image);
+        kenduri = findViewById(R.id.switchkenduri);
+        badminton = findViewById(R.id.switchbadminton);
+        majlis = findViewById(R.id.switchmajlis);
+        jamkenduri = findViewById(R.id.et_jamkenduri);
+        jambadminton = findViewById(R.id.et_jambadminton);
+        jammajlis = findViewById(R.id.et_jammajlis);
+        confirm = findViewById(R.id.btnConfirm);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("ClassBooking");
+        databaseReference = firebaseDatabase.getReference().child("ClassBooking");
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        jamkenduri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int num = Integer.parseInt(jamkenduri.getText().toString());
+                classBooking.setJamkenduri(num);
+            }
+        });
+
+        jambadminton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int num = Integer.parseInt(jambadminton.getText().toString());
+                classBooking.setJambadminton(num);
+            }
+        });
+
+        jammajlis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int num = Integer.parseInt(jammajlis.getText().toString());
+                classBooking.setJammajlis(num);
+            }
+        });
+
+        //send to firebase
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                classBooking.setFromDate(CID.getText().toString());
+                classBooking.setToDate(COD.getText().toString());
+                if(classBooking.getJamkenduri() != 0 || classBooking.getJambadminton() != 0 || classBooking.getJammajlis() != 0 ){
+                    databaseReference.child("booking1").setValue(classBooking);
+                    Toast.makeText(HallBooking.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(HallBooking.this, CheckoutActivity.class));
+                } else {
+                    Toast.makeText(HallBooking.this, "Please choose table", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         //array
         String [] tempat = {"Pilih Lokasi Dewan","Dewan Bukit Bendera","Dewan Kuala Krau","Dewan Lanchang","Dewan Sri Bahagia",
@@ -107,10 +163,6 @@ public class HallBooking extends AppCompatActivity {
             }
         });
 
-        kenduri = findViewById(R.id.switchkenduri);
-        badminton = findViewById(R.id.switchbadminton);
-        majlis = findViewById(R.id.switchmajlis);
-
         kenduri.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -159,6 +211,7 @@ public class HallBooking extends AppCompatActivity {
         });
         popupCID.show();
     }
+
     public void showPopupCOD(View v){
         Button saveCOD;
 
@@ -193,7 +246,6 @@ public class HallBooking extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
