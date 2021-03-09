@@ -37,12 +37,13 @@ public class HallBooking extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private Spinner spinner ;
+    private Spinner spinnerN ;
     private ImageView image;
     private Switch kenduri, badminton, majlis;
     private TextView jamkenduri, jambadminton, jammajlis ;
     private FloatingActionButton confirm;
-    ClassBooking classBooking;
+    //ClassBooking classBooking;
+    String hallName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class HallBooking extends AppCompatActivity {
         CID = findViewById(R.id.tvCID);
         COD = findViewById(R.id.tvCOD);
         popup = new Dialog(this);
-        spinner = findViewById(R.id.spinner);
+        spinnerN = findViewById(R.id.spinner);
         image = findViewById(R.id.image);
         kenduri = findViewById(R.id.switchkenduri);
         badminton = findViewById(R.id.switchbadminton);
@@ -66,47 +67,40 @@ public class HallBooking extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("ClassBooking");
         databaseReference = firebaseDatabase.getReference().child("ClassBooking");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        jamkenduri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int num = Integer.parseInt(jamkenduri.getText().toString());
-                classBooking.setJamkenduri(num);
-            }
-        });
-
-        jambadminton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int num = Integer.parseInt(jambadminton.getText().toString());
-                classBooking.setJambadminton(num);
-            }
-        });
-
-        jammajlis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int num = Integer.parseInt(jammajlis.getText().toString());
-                classBooking.setJammajlis(num);
-            }
-        });
 
         //send to firebase
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                classBooking.setFromDate(CID.getText().toString());
-                classBooking.setToDate(COD.getText().toString());
-                if(classBooking.getJamkenduri() != 0 || classBooking.getJambadminton() != 0 || classBooking.getJammajlis() != 0 ){
-                    databaseReference.child("booking1").setValue(classBooking);
-                    Toast.makeText(HallBooking.this, "Sent to database", Toast.LENGTH_SHORT).show();
+                ClassBooking classBooking = new ClassBooking();
+                String iCID = CID.getText().toString();
+                String iCOD = COD.getText().toString();
+                String iJamKenduri = jamkenduri.getText().toString();
+                int numJamKenduri = Integer.parseInt(iJamKenduri);
+                String iJamBadminton = jambadminton.getText().toString();
+                int numJamBadminton = Integer.parseInt(iJamBadminton);
+                String iJamMajlis = jammajlis.getText().toString();
+                int numJamMajlis = Integer.parseInt(iJamMajlis);
+
+                if(numJamBadminton!=0|| numJamKenduri!=0 || numJamMajlis!=0 ){
+
+                    classBooking.setFromDate(iCID);
+                    classBooking.setToDate(iCOD);
+                    classBooking.setJambadminton(numJamBadminton);
+                    classBooking.setJamkenduri(numJamKenduri);
+                    classBooking.setJammajlis(numJamMajlis);
+                    classBooking.setHallName(hallName);
+
+                    //databaseReference.child("booking1").setValue(classBooking);
+                    //String id = databaseReference.push().getKey();
+                    databaseReference.child(firebaseAuth.getUid()).setValue(classBooking);
+                    Toast.makeText(HallBooking.this, "Hantar ke Pangkalan Data", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(HallBooking.this, CheckoutActivity.class));
                 } else {
-                    Toast.makeText(HallBooking.this, "Please choose table", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HallBooking.this, "Sila pilih majlis disediakan", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -116,11 +110,15 @@ public class HallBooking extends AppCompatActivity {
                 "Dewan Sri Mentakab","Dewan Sri Semantan","Dewan Sri Tualang","Dewan Taman Saga","Dewan Taman Temerloh Jaya","Dewan Tun Razak"};
 
         ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,tempat);
-        spinner.setAdapter(adapter);
+        spinnerN.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+        spinnerN.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                hallName = parent.getItemAtPosition(position).toString();
+                Toast.makeText(HallBooking.this, hallName, Toast.LENGTH_SHORT).show();
                 switch (position){
                     case 0:
                         image.setImageResource(R.drawable.dewanpilih);
@@ -163,24 +161,6 @@ public class HallBooking extends AppCompatActivity {
             }
         });
 
-        kenduri.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-        badminton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
-        majlis.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            }
-        });
 
     }
     public void showPopupCID(View v){
@@ -237,7 +217,9 @@ public class HallBooking extends AppCompatActivity {
             public void onClick(View v) {
                 popupCOD.dismiss();
             }
+
         });
+
         popupCOD.show();
     }
 

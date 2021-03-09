@@ -7,19 +7,6 @@
     android:background="#741282B5"
     tools:context=".HallBooking">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="350dp"
-        android:layout_height="37dp"
-        android:spinnerMode="dropdown"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
-
     <ImageView
         android:id="@+id/image"
         android:layout_width="350dp"
@@ -34,45 +21,6 @@
     </ImageView>
 
 
-    <Switch
-        android:id="@+id/switchkenduri"
-        android:layout_width="247dp"
-        android:layout_height="50dp"
-        android:text="Kenduri (RM500 Sejam)"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746"></Switch>
-
-    <Switch
-        android:id="@+id/switchbadminton"
-        android:layout_width="247dp"
-        android:layout_height="50dp"
-        android:text="Badminton (RM8 Sejam)"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844"></Switch>
-
-    <Switch
-        android:id="@+id/switchmajlis"
-        android:layout_width="247dp"
-        android:layout_height="50dp"
-        android:text="Lain-Lain (RM400 Sejam)"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947"></Switch>
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="350dp"
@@ -82,8 +30,10 @@
         app:cardBackgroundColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449">
 
         <TextView
             android:id="@+id/tvCID"
@@ -92,6 +42,7 @@
             android:layout_marginVertical="15dp"
             android:layout_marginLeft="5dp"
             android:text="First Date"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
         <ImageView
@@ -102,6 +53,19 @@
             android:layout_marginLeft="275dp"
             android:src="@drawable/cal" />
     </androidx.cardview.widget.CardView>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="350dp"
+        android:layout_height="37dp"
+        android:spinnerMode="dropdown"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -115,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612">
+        app:layout_constraintVertical_bias="0.56">
 
         <TextView
             android:id="@+id/tvCOD"
@@ -124,6 +88,7 @@
             android:layout_marginVertical="15dp"
             android:layout_marginLeft="5dp"
             android:text="Last Date"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
         <ImageView
@@ -147,21 +112,7 @@
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746" />
-
-    <EditText
-        android:id="@+id/et_jambadminton"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintVertical_bias="0.696" />
 
     <EditText
         android:id="@+id/et_jammajlis"
@@ -175,7 +126,60 @@
         app:layout_constraintHorizontal_bias="0.953"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.895" />
+
+    <EditText
+        android:id="@+id/et_jambadminton"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
+
+    <Switch
+        android:id="@+id/switchbadminton"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Badminton (RM8 Sejam)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792"></Switch>
+
+    <Switch
+        android:id="@+id/switchmajlis"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Lain-Lain (RM400 Sejam)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"></Switch>
+
+    <Switch
+        android:id="@+id/switchkenduri"
+        android:layout_width="247dp"
+        android:layout_height="50dp"
+        android:text="Kenduri (RM500 Sejam)"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.696"></Switch>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnConfirm"

@@ -123,7 +123,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void setupUIViews() {
-        userName = (EditText) findViewById(R.id.etPhone);
+        userName = (EditText) findViewById(R.id.etUserName2);
         userPassword = (EditText) findViewById(R.id.etUserPassword);
         userEmail = (EditText) findViewById(R.id.etEmail);
         regButton = (Button) findViewById(R.id.btnregister);
